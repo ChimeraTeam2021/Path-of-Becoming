@@ -6,11 +6,13 @@ public class Boulder : MonoBehaviour
 {
     SpriteRenderer render;
     EdgeCollider2D coll;
+   
 
     private void Start()
     {
         render = GetComponent<SpriteRenderer>();
         coll = GetComponent<EdgeCollider2D>();
+        
     }
 
     void Update()

@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
 
     private int extraJump;
     public int extraJampValue;
+    private bool start;
 
     private void Start()
     {
@@ -28,32 +29,37 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        isGround = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
-        moveImput = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(moveImput * speed, rb.velocity.y);
+        StartCoroutine(Wait());
 
-        if(faceRight == false && moveImput > 0)
+        if (start)
         {
-            Flip();
-        }
-        else if(faceRight == true && moveImput < 0)
-        {
-            Flip();
-        }
+            isGround = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
+            moveImput = Input.GetAxis("Horizontal");
+            rb.velocity = new Vector2(moveImput * speed, rb.velocity.y);
 
-        if (isGround == true)
-        {
-            extraJump = extraJampValue;
-        }
+            if (faceRight == false && moveImput > 0)
+            {
+                Flip();
+            }
+            else if (faceRight == true && moveImput < 0)
+            {
+                Flip();
+            }
 
-        if (Input.GetKeyDown(KeyCode.Space) && extraJump > 0)
-        {
-            rb.velocity = Vector2.up * jumpForce;
-            extraJump--;
-        }
-        else if (Input.GetKeyDown(KeyCode.Space) && extraJump == 0 && isGround == true)
-        {
-            rb.velocity = Vector2.up * jumpForce;
+            if (isGround == true)
+            {
+                extraJump = extraJampValue;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space) && extraJump > 0)
+            {
+                rb.velocity = Vector2.up * jumpForce;
+                extraJump--;
+            }
+            else if (Input.GetKeyDown(KeyCode.Space) && extraJump == 0 && isGround == true)
+            {
+                rb.velocity = Vector2.up * jumpForce;
+            }
         }
     }
 
@@ -63,5 +69,11 @@ public class PlayerController : MonoBehaviour
         Vector3 Scaler = transform.localScale;
         Scaler.x *= -1;
         transform.localScale = Scaler;
+    }
+
+    private IEnumerator Wait()
+    {
+        yield return new WaitForSecondsRealtime(15);
+        start = true;
     }
 }
