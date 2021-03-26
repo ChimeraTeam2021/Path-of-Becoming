@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Boulder.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\CaveMask.cs" />
+    <Compile Include="Assets\Scripts\ChangeSpiderToShkatulka.cs" />
     <Compile Include="Assets\Scripts\DialogueChooseTrigger.cs" />
     <Compile Include="Assets\Scripts\DialogueSystem.cs" />
     <Compile Include="Assets\Scripts\DialogueTrigger.cs" />
@@ -76,6 +77,10 @@
     <Compile Include="Assets\Scripts\PutInInventory.cs" />
     <Compile Include="Assets\Scripts\Scrolling.cs" />
     <Compile Include="Assets\Scripts\ScrollingForest.cs" />
+    <Compile Include="Assets\Scripts\Shkatulka.cs" />
+    <Compile Include="Assets\Scripts\Slot.cs" />
+    <Compile Include="Assets\Scripts\Spider.cs" />
+    <Compile Include="Assets\Scripts\UseItem.cs" />
     <None Include="Assets\Resources\Russian2.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.20f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

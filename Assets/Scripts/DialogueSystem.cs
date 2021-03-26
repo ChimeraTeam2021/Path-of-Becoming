@@ -25,7 +25,6 @@ public class DialogueSystem : MonoBehaviour
     private string subCat = "cat";
     private string subAnonim = "anonym";
     private string subStranger = "stranger";
-    private string subChoice = "choice";
     bool dialogueStarted;
     Queue<string> linesTriggered = new Queue<string>();
     private void Awake()
