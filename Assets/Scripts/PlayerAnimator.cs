@@ -9,7 +9,7 @@ public class PlayerAnimator : MonoBehaviour
     private float walk;
     [SerializeField]
     private PlayerController PC;
-
+    
     void Start()
     {
         anim = GetComponent<Animator>(); 
@@ -18,7 +18,7 @@ public class PlayerAnimator : MonoBehaviour
     
     void Update()
     {
-        walk = Input.GetAxis("Horizontal");
+        walk = PC.MoveInput;
         if(walk != 0)
         {
             anim.SetBool("walk", true);

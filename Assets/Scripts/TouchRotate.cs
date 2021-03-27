@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TouchRotate : MonoBehaviour
 {
+    
     public void OnMouseDown()
     {
         if (!PazzleControl.youWin)
@@ -14,13 +15,15 @@ public class TouchRotate : MonoBehaviour
 
     IEnumerator Rotate()
     {
-        transform.Rotate(0, 0, -15);
+       
+         transform.Rotate(0, 0, -15);
+         yield return new WaitForSecondsRealtime(0.1f);
+         transform.Rotate(0, 0, -15);
+         yield return new WaitForSecondsRealtime(0.1f);
+         transform.Rotate(0, 0, -15);
+         yield return new WaitForSecondsRealtime(0.1f);
+         transform.Rotate(0, 0, -15);
         yield return new WaitForSecondsRealtime(0.1f);
-        transform.Rotate(0, 0, -15);
-        yield return new WaitForSecondsRealtime(0.1f);
-        transform.Rotate(0, 0, -15);
-        yield return new WaitForSecondsRealtime(0.1f);
-        transform.Rotate(0, 0, -15);
-        yield return new WaitForSecondsRealtime(0.1f);
+       
     }
 }

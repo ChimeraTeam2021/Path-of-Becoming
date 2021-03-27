@@ -13,6 +13,8 @@ public class PazzleControl : MonoBehaviour
     private SpriteRenderer cage;
     [SerializeField]
     private SpriteRenderer dor;
+    [SerializeField]
+    private SpriteRenderer cageBack;
     
     public static bool youWin;
 
@@ -21,13 +23,14 @@ public class PazzleControl : MonoBehaviour
         youWin = false;
         anim = GetComponent<Animator>();
 
-        hexagon[0].rotation = new Quaternion(0f, 0f, 60f,0);
-        hexagon[1].rotation = new Quaternion(0f, 0f, 180f, 0);
-        hexagon[2].rotation = new Quaternion(0f, 0f, 120f, 0);
-        hexagon[3].rotation = new Quaternion(0f, 0f, -60f, 0);
-        hexagon[4].rotation = new Quaternion(0f, 0f, -180f, 0);
-        hexagon[5].rotation = new Quaternion(0f, 0f, -120f, 0);
-        hexagon[6].rotation = new Quaternion(0f, 0f, 60f, 0);
+        int r = Random.Range(1, 5);
+        hexagon[0].transform.Rotate(0, 0, 60 * r);
+        hexagon[1].transform.Rotate(0, 0, -60 * r);
+        hexagon[2].transform.Rotate(0, 0, 60 * r);
+        hexagon[3].transform.Rotate(0, 0, -60 * r);
+        hexagon[4].transform.Rotate(0, 0, 60 * r);
+        hexagon[5].transform.Rotate(0, 0, -60 * r);
+        hexagon[6].transform.Rotate(0, 0, 60 * r);
         anim.SetBool("New Bool", false);
     }
 
@@ -43,6 +46,7 @@ public class PazzleControl : MonoBehaviour
         {
             youWin = true;
             anim.SetBool("New Bool", true);
+            cageBack.sortingOrder = 0;
             cage.sortingOrder = 1;
             dor.sortingOrder = 2;
 

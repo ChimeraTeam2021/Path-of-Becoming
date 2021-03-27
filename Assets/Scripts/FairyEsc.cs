@@ -23,21 +23,21 @@ public class FairyEsc : MonoBehaviour
         {
             float newPosition = Mathf.SmoothDamp(transform.position.x, target.position.x, ref yVelocity, smoothTime);
             transform.position = new Vector3(newPosition, target.position.y, transform.position.z);
-            Flip();
+            //Flip();
         }
     }
 
-    void Flip()
-    {
-        if (Input.GetAxis("Horizontal") < 0)
-        {
-            transform.localRotation = Quaternion.Euler(0, 0, 0);
-        }
+   // void Flip()
+    //{
+    //    if (Input.GetAxis("Horizontal") < 0)
+    //    {
+    //        transform.localRotation = Quaternion.Euler(0, 0, 0);
+   //     }
 
-        if (Input.GetAxis("Horizontal") > 0)
-        {
-            transform.localRotation = Quaternion.Euler(0, 180, 0);
-        }
+   //     if (Input.GetAxis("Horizontal") > 0)
+   //     {
+   //         transform.localRotation = Quaternion.Euler(0, 180, 0);
+   //     }
 
-    }
+   // }
 }

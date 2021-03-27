@@ -67,13 +67,24 @@
     <Compile Include="Assets\Scripts\CageOpen.cs" />
     <Compile Include="Assets\Scripts\CageStart.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\ChangeSpiderToShkatulka.cs" />
+    <Compile Include="Assets\Scripts\DialogueChooseTrigger.cs" />
+    <Compile Include="Assets\Scripts\DialogueSystem.cs" />
+    <Compile Include="Assets\Scripts\DialogueTrigger.cs" />
     <Compile Include="Assets\Scripts\FairyEsc.cs" />
+    <Compile Include="Assets\Scripts\Inventory.cs" />
     <Compile Include="Assets\Scripts\PazzleControl.cs" />
     <Compile Include="Assets\Scripts\PlayerAnimator.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\PutInInventory.cs" />
     <Compile Include="Assets\Scripts\Scrolling.cs" />
     <Compile Include="Assets\Scripts\ScrollingForest.cs" />
+    <Compile Include="Assets\Scripts\Shkatulka.cs" />
+    <Compile Include="Assets\Scripts\Slot.cs" />
+    <Compile Include="Assets\Scripts\Spider.cs" />
     <Compile Include="Assets\Scripts\TouchRotate.cs" />
+    <Compile Include="Assets\Scripts\UseItem.cs" />
+    <None Include="Assets\Resources\Russian2.txt" />
     <Reference Include="UnityEngine">
       <HintPath>D:/Program Files/Unity/2019.4.20f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
