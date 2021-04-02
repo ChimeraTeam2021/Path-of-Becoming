@@ -25,34 +25,22 @@ public class DialogueSystem : MonoBehaviour
     private string subCat = "cat";
     private string subAnonim = "anonym";
     private string subStranger = "stranger";
-    private bool dialogueStarted;
-    private bool next;
-
+    private string subChoice = "choice";
+    bool dialogueStarted;
     Queue<string> linesTriggered = new Queue<string>();
-
-    
-
     private void Awake()
     {
-        next = false;
         dialogueStarted = false;      
         TextAsset language = Resources.Load<TextAsset>("Russian2");
         file = language.text.Split('\n');     
     }
     private void Update()
     {
-        if (dialogueStarted && next)
+        if(dialogueStarted && Input.GetKeyDown(KeyCode.A))
         {
             DisplayNextLine();
-            next = false;
         }
     }
-
-    public void Next()
-    {
-        next = true;
-    }
-
     public void ChooseStart(int choose1, int choose2,int endOfChoices,GameObject nextTrigger)
     {
         controlButtons.SetActive(false);
@@ -125,12 +113,12 @@ public class DialogueSystem : MonoBehaviour
         else if(sentence.Contains(subAnonim))
         {
             nameOutput.text = "???";
-            output.color = new Color(0, 250, 0);
+            output.color = new Color(60, 60, 60);
         }
         else if(sentence.Contains(subStranger))
         {
             nameOutput.text = "???";
-            output.color = new Color(0, 250, 0);
+            output.color = new Color(60, 60, 60);
         }
 
         string result = sentence.Substring(sentence.IndexOf('=') + 1);

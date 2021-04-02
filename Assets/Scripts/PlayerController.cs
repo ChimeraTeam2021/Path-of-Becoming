@@ -15,15 +15,12 @@ public class PlayerController : MonoBehaviour
     public float checkRadius;
     public LayerMask whatIsGround;
 
-
     private int extraJump;
     public int ExtraJumpValue;
 
     [SerializeField] GameObject moveButtons;
     [SerializeField] GameObject firstDiaTrigger;
     [SerializeField] float waitTimeTillStart;
-    [SerializeField] Transform pixy;
-
     private void Start()
     {
         moveButtons.SetActive(false);
@@ -35,18 +32,16 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         isGround = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
-         //MoveInput = Input.GetAxis("Horizontal");
+        // moveInput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(MoveInput * speed, rb.velocity.y);
 
         if (faceRight == false && MoveInput > 0)
         {
             Flip();
-            pixy.transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
         else if (faceRight == true && MoveInput < 0)
         {
             Flip();
-            pixy.transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
 
         if (isGround == true)

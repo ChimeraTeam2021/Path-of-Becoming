@@ -8,7 +8,6 @@ public class Inventory : MonoBehaviour
     bool hidden = false;
 
     public bool[] isFull;
-    public bool[] isChosen;
     public GameObject[] slots;
     public void ShowSlots()
     {
